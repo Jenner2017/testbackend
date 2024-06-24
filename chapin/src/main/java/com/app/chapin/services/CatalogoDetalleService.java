@@ -4,12 +4,13 @@ import com.app.chapin.persistence.dtos.CatalogoDto;
 import com.app.chapin.persistence.models.Catalogo;
 import com.app.chapin.persistence.models.CatalogoDetalle;
 import com.app.chapin.persistence.respository.CatalogoDetalleRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
+@Slf4j
 @Service
 public class CatalogoDetalleService {
 
@@ -17,6 +18,8 @@ public class CatalogoDetalleService {
     private CatalogoDetalleRepository repository;
 
     public CatalogoDetalle crearCatalogo(CatalogoDto dto, Integer idCatalogo) {
+        log.info("Se esta crando el catalogo {} ", dto.getNombre());
+        log.info("Detalle catalogo {} ", dto.getDetalle());
         CatalogoDetalle catalogoDetalle = new CatalogoDetalle();
         catalogoDetalle.setId(repository.getSecuencia());
         catalogoDetalle.setIdCatalogo(idCatalogo);
