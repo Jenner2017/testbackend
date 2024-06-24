@@ -20,6 +20,7 @@ public class CatalogoDetalleService {
     public CatalogoDetalle crearCatalogo(CatalogoDto dto, Integer idCatalogo) {
         log.info("Se esta crando el catalogo {} ", dto.getNombre());
         log.info("Detalle catalogo {} ", dto.getDetalle());
+        log.info("Es activo? {} ", dto.getActivo());
         CatalogoDetalle catalogoDetalle = new CatalogoDetalle();
         catalogoDetalle.setId(repository.getSecuencia());
         catalogoDetalle.setIdCatalogo(idCatalogo);
