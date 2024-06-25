@@ -26,6 +26,7 @@ public class CatalogoService {
     }
 
     public Catalogo getCatalogo(Integer id) {
+        System.out.println("Obteniendo catalogo");
         return repository.findById(id).orElse(null);
     }
 
