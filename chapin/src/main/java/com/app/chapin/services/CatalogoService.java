@@ -19,6 +19,7 @@ public class CatalogoService {
 
     public Catalogo crearCatalogo(CatalogoDto dto) {
         log.info("Creacion catalogo padre");
+        log.info("Nombre del catalogo {}", dto.getNombre());
          Catalogo catalogo = new Catalogo();
          catalogo.setId(repository.getSecuencia());
          catalogo.setNombre(dto.getNombre());
