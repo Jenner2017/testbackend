@@ -30,6 +30,7 @@ public class CatalogoService {
     }
 
     public Catalogo getCatalogo(Integer id) {
+        System.out.println("catalogo xd");
         return repository.findById(id).orElse(null);
     }
 
