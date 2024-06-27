@@ -39,7 +39,8 @@ public class CatalogoService {
     }
 
     public Catalogo actualizarCatalogo(CatalogoDto dto, Integer id) {
-        System.out.println("actualizando catalogo xd");
+        log.info("actualizando catalogo");
+        log.info("Id catalogo {}", id);
         Catalogo catalogo = repository.findById(id).orElseThrow();
         catalogo.setNombre(dto.getNombre());
         catalogo.setDetalle(dto.getDetalle());
